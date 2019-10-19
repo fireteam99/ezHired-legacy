@@ -1,0 +1,30 @@
+.dashboard{
+  margin: auto;
+
+}
+
+.column{
+  display: inline-block;
+  text-align: center;
+  background: #E6E6E6;
+  width: 30%;
+  min-width: 500px;
+  margin: 50px 15px;
+  height: 100vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.columnHeader {
+  margin: auto;
+  font-size: 20px;
+  width: 300px;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: #db6a53;
+  border-bottom-width: 5px;
+  text-transform: uppercase;
+  background-color: #FFF;
+}
