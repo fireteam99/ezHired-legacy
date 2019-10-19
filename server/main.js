@@ -1,11 +1,16 @@
 import { Meteor } from 'meteor/meteor';
 import Links from '/imports/api/links';
+import SimpleSchema from 'simpl-schema';
+import {Company} from './schema/Company';
 
 function insertLink(title, url) {
   Links.insert({ title, url, createdAt: new Date() });
 }
 
 Meteor.startup(() => {
+	var google = {name: "Google"};
+	
+
   // If the Links collection is empty, add some data.
   if (Links.find().count() === 0) {
     insertLink(
