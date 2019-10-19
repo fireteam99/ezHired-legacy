@@ -12,7 +12,6 @@ const App = () => (
   <Router history={browserHistory}>
     <Switch>
       <Route exact path="/" component={Login} />
-
     </Switch>
   </Router>
 );
