@@ -21,6 +21,7 @@ export default class Card extends Component {
         <div className = "edit">
           <FontAwesomeIcon icon="pen-square"/>
         </div>
+        {this.props.description}
       </div>
       </div>
     );

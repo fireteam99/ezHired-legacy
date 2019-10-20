@@ -11,7 +11,7 @@ import { Jobs } from '../../api/jobs.js';
 class Dashboard extends Component {
 
   renderCards = (jobs) => (
-    jobs.map(job => <Card company={job.company.name} position={job.position} />)
+    jobs.map(job => <Card company={job.company.name} position={job.position} description={job.description}/>)
   )
 
   render() {

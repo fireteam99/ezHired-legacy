@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import "./AddJob.css";
-import EditJob from './EditJob.jsx';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Mongo } from 'meteor/mongo';
+const queryString = require('query-string');
+import EditApplication from './EditApplication.jsx';
+import EditAssignment from './EditAssignment.jsx';
+// import EditInterview from './EditInterview.jsx';
+import EditOffer from './EditOffer.jsx';
+import EditRejection from './EditRejection.jsx';
 
 
 import { Jobs } from '../../api/jobs.js';
 
-class AddJob extends Component {
+class EditJob extends Component {
   state = {
-    company: "",
-    position: "",
+    company: "Wayfair",
+    position: "Devops",
     status: "application",
-  }
-
-  componentDidMount() {
-    this._id = new Mongo.ObjectID().toString();
+    _id: ''
   }
 
   handleSubmit = () => {
     const job = {
-      _id: this._id,
       user: 'feces',
       company: {
         name: this.state.company
@@ -33,11 +33,30 @@ class AddJob extends Component {
       offer: null,
       rejection: null,
     };
-    Jobs.insert(job);
+    this._id = Jobs.insert(job);
   }
 
   test = () => {
     console.log("FUCKING WORK YOU PIECE OF SHIT");
+  }
+
+  renderAdditional = () => {
+    if (this.state.status === 'application') {
+      return <EditApplication />
+    } else if (this.state.status === 'applied') {
+      return (
+        <div>
+          <EditAssignment />
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <EditOffer />
+          <EditRejection />
+        </div>
+      )
+    }
   }
 
   render() {
@@ -72,23 +91,18 @@ class AddJob extends Component {
               <option value="finalized">Finalized</option>
         </select>
         <br/>
-        <Link to={{
-          pathname: '/edit',
-          query: {_id: this._id}
-          }}>
+        <NavLink to="/home" onClick = {() => this.handleSubmit()}>
           <button type="button" id="completed-task" className="addSubmit" >
             Next
           </button>
-        </Link>
+        </NavLink>
       </form>
+      <div>
+      {this.renderAdditional()}
       </div>
-
+      </div>
     );
   }
 }
 
-export default withTracker(() => {
-  return {
-    jobs: Jobs.find({}).fetch(),
-  };
-})(AddJob);
+export default EditJob;
