@@ -10,6 +10,12 @@ body {
 .page{
   text-align: center;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 
 .pageHeader{
   font-weight: 600;

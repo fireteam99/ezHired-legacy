@@ -14,7 +14,6 @@ const App = () => (
   <Router history={browserHistory}>
     <Header/>
     <Switch>
-      <Route exact path="/" component={Header} />
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/taskList" component={TaskList} />
       <Route exact path="/addJob" component={AddJob} />
