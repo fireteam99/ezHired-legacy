@@ -1,8 +1,11 @@
 import React, { Component, useState } from 'react';
 import './Dashboard.css';
 import {JOBS} from './jobtest';
-import Cards from './Cards.jsx'
 import Card from './Card.jsx';
+import Column from './Column.jsx';
+import { withTracker } from 'meteor/react-meteor-data';
+
+import { Jobs } from '../../api/jobs.js';
 
 
 class Dashboard extends Component {
@@ -24,12 +27,21 @@ class Dashboard extends Component {
     return(
       <div className="dashboard">
         <h2 className="pageHeader">DASHBOARD</h2>
-        <Cards />
+        <Column title="to apply">
+            <Card company = "Wayfair" position="DevOps"/>
+            <Card company = "Wayfair" position="DevOps"/>
+        </Column>
+        <Column title="applied for" />
+        <Column title="completed" />
 
       </div>
     );
   }
 }
 export default Dashboard;
-//<this.RenderJobCard item = {this.state.jobs[0]} />
-//<Button onClick={this.toggleModal(item)}>see more</Button>
+
+export default withTracker(() => {
+  return {
+    jobs: Jobs.find({}).fetch(),
+  };
+})(AddJob);
