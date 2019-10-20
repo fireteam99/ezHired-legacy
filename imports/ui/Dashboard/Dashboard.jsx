@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import './Dashboard.css';
 import {JOBS} from './jobtest';
-import Cards from './Cards.jsx'
+import Cards from './Cards.jsx';
 import Card from './Card.jsx';
 
 
