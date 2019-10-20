@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import './Dashboard.css';
 import {JOBS} from './jobtest';
 import Cards from './Cards.jsx'
+import Card from './Card.jsx';
 
 
 class Dashboard extends Component {
@@ -22,7 +23,9 @@ class Dashboard extends Component {
   render() {
     return(
       <div className="dashboard">
+        <h2 className="pageHeader">DASHBOARD</h2>
         <Cards />
+
       </div>
     );
   }
