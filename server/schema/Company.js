@@ -1,7 +1,9 @@
-import SimpleSchema from 'simpl-schema'
+import SimpleSchema from 'simpl-schema';
 
 Company = new SimpleSchema({
-  Name:	{
+  name:	{
     type: String
   }
 });
+
+export default Company;

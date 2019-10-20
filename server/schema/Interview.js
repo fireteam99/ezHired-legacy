@@ -1,7 +1,19 @@
 import SimpleSchema from 'simpl-schema'
 
 Interview = new SimpleSchema({
-  date:	{
-    type: Date
+  date:	Date,
+  location: {
+    type: String,
+    optional: true
+  },
+  notes: {
+    type: String,
+    optional: true
+  },
+  contact: {
+    type: String,
+    optional: true
   }
 });
+
+export default Interview;
