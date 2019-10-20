@@ -1,5 +1,5 @@
 import SimpleSchema from 'simpl-schema';
-import CompensationSchema from './compensation';
+import CompensationSchema from './Compensation';
 
 const Offer = new SimpleSchema({
   compensation: CompensationSchema,
