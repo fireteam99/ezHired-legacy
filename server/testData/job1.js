@@ -4,7 +4,7 @@ export default job = {
   company: {
     name: 'jonjew inc'
   },
-  title: 'garbage man',
+  position: 'garbage man',
   application: {
     deadline: new Date()
   },
