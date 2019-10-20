@@ -12,6 +12,7 @@
 }
 
 .addSubmit{
+  transition: all 0.25s ease-in;
   font-family: 'Montserrat', sans-serif;
   color: #FFF;
   margin-top: 20px;
@@ -20,4 +21,12 @@
   border-radius: 20px;
   background: #db6a53;
   font-size: 20px;
+}
+
+.addSubmit:hover{
+  background: #d63429;
+}
+
+.label{
+  margin-bottom: 5px;
 }

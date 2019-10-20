@@ -1,5 +1,8 @@
 .taskList {
-  width: 30%;
+  width: 40%;
+  min-width: 500px;
+  display: block;
+  margin: auto;
   margin-top: 30px;
   margin-bottom: 10px;
 }

@@ -15,7 +15,7 @@ const Job = new SimpleSchema({
     type: CompanySchema,
     required: true
   },
-  title: {
+  position: {
     type: String,
     required: true
   },
