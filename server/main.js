@@ -1,36 +1,26 @@
 import { Meteor } from 'meteor/meteor';
-import Links from '/imports/api/links';
+import Jobs from '/imports/api/jobs';
 import SimpleSchema from 'simpl-schema';
-import {Company} from './schema/Company';
-
-function insertLink(title, url) {
-  Links.insert({ title, url, createdAt: new Date() });
-}
+import jobSchema from './schema/Job';
 
 Meteor.startup(() => {
-	var google = {name: "Google"};
-	
 
-  // If the Links collection is empty, add some data.
-  if (Links.find().count() === 0) {
-    insertLink(
-      'Do the Tutorial',
-      'https://www.meteor.com/tutorials/react/creating-an-app'
-    );
-
-    insertLink(
-      'Follow the Guide',
-      'http://guide.meteor.com'
-    );
-
-    insertLink(
-      'Read the Docs',
-      'https://docs.meteor.com'
-    );
-
-    insertLink(
-      'Discussions',
-      'https://forums.meteor.com'
-    );
+  // Attach schema to Jobs
+  Jobs.attachSchema(jobSchema);
+  // Add some seed data
+  if (Jobs.find().count() === 0) {
+    Jobs.insert({
+      user: 'test',
+      description: 'this is a test job',
+      title: 'garbage man',
+      application: {
+        deadline: new Date()
+      },
+      applied: null,
+      offer: null,
+      rejection: null,
+      favorited: true,
+      status: 'application'
+    })
   }
 });

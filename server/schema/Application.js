@@ -1,9 +1,9 @@
+import SimpleSchema from 'simpl-schema';
+
 Application = new SimpleSchema({
-  Job: {
-    type: Job,
-  },
-  deadline
-  : {
+  deadline: {
     type: Date,
   }
 });
+
+export default Application;

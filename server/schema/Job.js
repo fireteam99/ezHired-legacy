@@ -1,22 +1,36 @@
 import SimpleSchema from 'simpl-schema';
-import {Company} from './Company';
-import {Interview} from './Interview';
+import CompanySchema from './Company';
+import ApplicationSchema from './Application';
+import AppliedSchema from './Applied';
+import OfferSchema from './Offer';
+import RejectionSchema from './Rejection';
 
-Job = new SimpleSchema({
+const Job = new SimpleSchema({
+  user: {
+    type: String,
+    required: true
+  },
+  description: String,
   company: {
-    type: Company
+    type: CompanySchema,
+    required: true
   },
   title: {
-    type: String
+    type: String,
+    required: true
   },
-  application: {
-	type: String
+  application: ApplicationSchema,
+  applied: AppliedSchema,
+  offer: OfferSchema,
+  rejection: RejectionSchema,
+  favorited: {
+    type: Boolean,
+    defaultValue: false
   },
-  interviews: {
-	  type: [Interview]
-  },
-  offer: {
-	  salary: Number,
-	  deadline: Date
+  status: {
+    type: String,
+    allowedValues: ['application', 'applied', 'finalized']
   }
-});
+}, { requiredByDefault: false });
+
+export default Job;
