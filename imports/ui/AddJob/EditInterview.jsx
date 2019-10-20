@@ -57,24 +57,37 @@ class EditInterview extends Component{
         placeHolders=""
         onChange={(e) => this.setState({location: e.target.value})}/>
 
-        <p className="label">Notes</p>
-        <input className = "addForm"
-        type='text'
-        name='notes'
-        placeHolders=""
-        onChange={(e) => this.setState({notes: e.target.value})}
-        />
+             <p className = "label">Date</p>
+                <DatePicker selected={this.state.date} onChange={this.handleDateChange}/>
+                
+                
 
-        <p className="label">Contact</p>
-        <input className="addForm"
-        type='text'
-        name='contacts'
-        placeHolders=""
-        onChange={(e) => this.setState({contact: e.target.value})}
-        />
-        <button type="submit" id="completed-task" className="addSubmit" onClick={() =>this.handleSubmit}>Next</button>
+                <p className="label">Location</p>
+                <input className="addForm"
+                type='text'
+                name='location'
+                placeHolders=""
+                onChange={(e) => this.setState({location: e.target.value})}/>
+				
+                <p className="label">Notes</p>
+                <input className = "addForm"
+                type='text'
+                name='notes'
+                placeHolders=""
+                onChange={(e) => this.setState({notes: e.target.value})}
+                />
 
-        </form>
+                <p className="label">Contact</p>
+                <input className="addForm"
+                type='text'
+                name='contacts'
+                placeHolders=""
+                onChange={(e) => this.setState({contact: e.target.value})}
+                />
+                <br/>
+				<button type="submit" id="completed-task" className="addSubmit" onClick={() =>this.handleSubmit}>Next</button>
+				
+            </form>
         </div>
       );
     }
