@@ -6,6 +6,7 @@ import job2 from './testData/job2';
 import job3 from './testData/job3';
 import job4 from './testData/job4';
 import job5 from './testData/job5';
+import job6 from './testData/job6';
 
 Meteor.startup(() => {
 
@@ -17,5 +18,7 @@ Meteor.startup(() => {
     Jobs.insert(job2);
     Jobs.insert(job3);
     Jobs.insert(job4);
+    Jobs.insert(job5);
+    Jobs.insert(job6);
   }
 });

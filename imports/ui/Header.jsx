@@ -10,7 +10,7 @@ export default class Header extends Component {
   render() {
     return(
       <div className = "header">
-        <NavLink to="/home"><div className = "logo"><strong>EZ</strong>HIRE</div></NavLink>
+        <NavLink to="/home"><div className = "logo"><strong>EZ</strong>HIRED</div></NavLink>
         <NavLink to="/dashboard" className = "btn" activeClassName="activeBtn"><FontAwesomeIcon icon="home"/></NavLink>
         <NavLink to="/taskList" className = "btn" activeClassName="activeBtn"><FontAwesomeIcon icon="list-alt"/></NavLink>
         <NavLink to="/addJob" className = "btn" activeClassName="activeBtn"><FontAwesomeIcon icon="calendar-plus"/></NavLink>
