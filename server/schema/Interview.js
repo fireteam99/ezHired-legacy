@@ -14,6 +14,8 @@ Interview = new SimpleSchema({
     type: String,
     optional: true
   }
+  
 });
+
 
 export default Interview;
