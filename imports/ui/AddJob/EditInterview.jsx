@@ -45,7 +45,6 @@ class EditInterview extends Component{
 
              <p className = "label">Date</p>
                 <DatePicker selected={this.state.date} onChange={this.handleDateChange}/>
-                <br/>
                 
                 
 
@@ -54,7 +53,7 @@ class EditInterview extends Component{
                 type='text'
                 name='location'
                 placeHolders=""
-                onChange={(e) => this.setState({location: e.target.value})}
+                onChange={(e) => this.setState({location: e.target.value})}/>
 				
                 <p className="label">Notes</p>
                 <input className = "addForm"
@@ -71,6 +70,7 @@ class EditInterview extends Component{
                 placeHolders=""
                 onChange={(e) => this.setState({contact: e.target.value})}
                 />
+                <br/>
 				<button type="submit" id="completed-task" className="addSubmit" onClick={() =>this.handleSubmit}>Next</button>
 				
             </form>
