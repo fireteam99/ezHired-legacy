@@ -19,7 +19,7 @@ class Job extends Component{
         if (item != null){ temp = item.id }
         this.setState({
             isModalOpen: !this.state.isModalOpen,
-            modalID = temp
+            modalID: temp
         });
     }
 
