@@ -1,6 +1,4 @@
 import React from 'react';
-import Hello from './Hello.jsx';
-import Info from './Info.jsx';
 
 import Header from './Header.jsx';
 import Dashboard from './Dashboard/Dashboard.jsx';
