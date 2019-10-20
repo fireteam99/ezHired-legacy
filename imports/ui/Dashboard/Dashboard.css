@@ -28,3 +28,12 @@
   text-transform: uppercase;
   background-color: #FFF;
 }
+
+.card{
+  width: 375px;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-style: solid;
+  border: rgba(224, 233, 104, 0.904) !important;
+  padding-bottom: 0.001%;
+}

@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './Dashboard.css';
 import {JOBS} from './jobtest';
-import Column from './Column.jsx';
-import Card from './Card.jsx';
+import Cards from './Cards.jsx'
 
 
-export default class Dashboard extends Component {
-
+class Dashboard extends Component {
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //       isModalOpen: false,
+  //       modalID: -1,
+  //       jobs: JOBS
+  //   }
+  //   this.toggleModal = this.toggleModal.bind(this);
+  //   this.toggleModalID = this.toggleModalID.bind(this);
+  // }
   state = {
     jobs: JOBS
   }
@@ -14,20 +22,11 @@ export default class Dashboard extends Component {
   render() {
     return(
       <div className="dashboard">
-        <Column title="to apply">
-
-
-          <Card item = {this.state.jobs[0]} />
-
-
-        </Column>
-        <Column title="applied for" />
-        <Column title="completed" />
-
+        <Cards />
       </div>
     );
   }
 }
-
+export default Dashboard;
 //<this.RenderJobCard item = {this.state.jobs[0]} />
 //<Button onClick={this.toggleModal(item)}>see more</Button>
