@@ -12,7 +12,6 @@ class AddJob extends Component {
   }
 
   handleSubmit = () => {
-    console.log('test');
     const job = {
       user: 'feces',
       company: {
@@ -25,7 +24,6 @@ class AddJob extends Component {
       offer: null,
       rejection: null,
     };
-    console.log(job);
     Jobs.insert(job);
   }
 
