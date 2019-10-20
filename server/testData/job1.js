@@ -6,7 +6,8 @@ export default job = {
   },
   position: 'garbage man',
   application: {
-    deadline: new Date()
+    deadline: new Date(),
+    link: 'https://google.com'
   },
   applied: null,
   offer: null,

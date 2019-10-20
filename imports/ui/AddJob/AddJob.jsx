@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SimpleSchema from 'simpl-schema';
 import "./AddJob.css";
 import { withTracker } from 'meteor/react-meteor-data';
 
@@ -26,7 +25,6 @@ class AddJob extends Component {
       offer: null,
       rejection: null,
     };
-    console.log(job)
     Jobs.insert(job);
     return false;
   }
