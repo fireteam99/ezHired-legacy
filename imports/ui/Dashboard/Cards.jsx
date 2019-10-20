@@ -14,17 +14,17 @@ RenderJobCard = ({item}) => {
                <CardTitle><i>{item.position}</i></CardTitle>
                <CardBody>
                    <CardText>{item.description}</CardText>
-               </CardBody>  
+               </CardBody>
            </Card>
        </div>
      );
  }
- 
+
 const Cards = ({item}) => (
     <div className = "Cards">
     <Column title="to apply">
-        <RenderJobCard item = {this.state.jobs[0]} />   
-        <RenderJobCard item = {this.state.jobs[1]} />
+        <Card2 company="Wayfair" position="DevOps" />
+        <Card2 company="Wayfair" position="DevOps" />
     </Column>
     <Column title="applied for" />
     <Column title="completed" />
