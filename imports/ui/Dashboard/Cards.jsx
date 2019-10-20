@@ -1,6 +1,7 @@
 import React from 'react';
 import {JOBS} from './jobtest';
 import Column from './Column.jsx';
+import Card2 from './Card.jsx';
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, CardHeader, Button, UncontrolledCollapse } from 'reactstrap';
 
 state = {
