@@ -11,8 +11,8 @@ class AddJob extends Component {
     status: "application"
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = () => {
+    console.log('test');
     const job = {
       user: 'feces',
       company: {
@@ -25,8 +25,12 @@ class AddJob extends Component {
       offer: null,
       rejection: null,
     };
+    console.log(job);
     Jobs.insert(job);
-    return false;
+  }
+
+  test = () => {
+    console.log("FUCKING WORK YOU PIECE OF SHIT");
   }
 
   render() {
@@ -61,7 +65,7 @@ class AddJob extends Component {
               <option value="finalized">Finalized</option>
         </select>
         <br/>
-        <button type="submit" id="completed-task" className="addSubmit" onClick = {() => this.handleSubmit}>
+        <button type="button" id="completed-task" className="addSubmit" onClick = {() => this.handleSubmit()}>
             Next
         </button>
       </form>
