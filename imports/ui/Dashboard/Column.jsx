@@ -8,6 +8,7 @@ export default class Column extends Component {
         <div className = "columnHeader">
           {this.props.title}
         </div>
+        {this.props.children}
       </div>
     );
   }
