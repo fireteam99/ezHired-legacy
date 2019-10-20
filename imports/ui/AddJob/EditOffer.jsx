@@ -10,7 +10,7 @@ class EditOffer extends Component{
         interval: 'hourly',
         amount: 0,
         benefits: "",
-        deadline = new Date()
+        deadline: new Date()
     }
 
     handleDateChange = date => {
@@ -21,7 +21,7 @@ class EditOffer extends Component{
         event.preventDefault();
         const compensation = {
           deadline: this.state.deadline,
-          link = this.state.link
+          link: this.state.link
         }
         const benefits = this.state.benefits;
         const deadline = this.state.deadline;
@@ -70,7 +70,7 @@ class EditOffer extends Component{
                 <DatePicker selected={this.state.deadline} onChange={this.handleDateChange}/>
                 <br/>
                 <button type="submit" id="completed-task" className="addSubmit" onClick={() =>this.handleSubmit}>Next</button>
-                
+
             </form>
         </div>
     }

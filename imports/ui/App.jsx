@@ -4,6 +4,7 @@ import Dashboard from './Dashboard/Dashboard.jsx';
 import AddJob from './AddJob/AddJob.jsx';
 import TaskList from './TaskList/TaskList.jsx';
 import Home from './Home/HomeComponent.jsx'
+import EditJob from './AddJob/EditJob.jsx';
 
 import { Router, Route, Switch, Redirect } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
@@ -18,6 +19,7 @@ const App = () => (
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/taskList" component={TaskList} />
       <Route exact path="/addJob" component={AddJob} />
+      <Route exact path="/edit" component={EditJob} />
       <Redirect to="home" />
     </Switch>
   </Router>

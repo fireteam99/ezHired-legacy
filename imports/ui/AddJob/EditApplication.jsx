@@ -10,8 +10,8 @@ import { Jobs } from '../../api/jobs.js';
 
 class EditApplication extends Component {
   state = {
-    deadline = new Date(),
-    link = ''
+    deadline: new Date(),
+    link: ''
   }
 
   handleSubmit = (event) => {

@@ -18,7 +18,7 @@ class EditAssignment extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        
+
         const description = this.state.description;
         const deadline = this.state.deadline;
         const completed = this.state.completed;
@@ -54,7 +54,7 @@ class EditAssignment extends Component{
                     <option value={false}>No</option>
                 </select>
                 <br/>
-                <button type="submit" id="completed-task" className="addSubmit" onClick={() =>this.handleSubmit}>Next</button>  
+                <button type="submit" id="completed-task" className="addSubmit" onClick={() =>this.handleSubmit}>Next</button>
             </form>
         </div>
     }
@@ -63,4 +63,4 @@ export default withTracker(() => {
     return {
       jobs: Jobs.find({})
     }
-  })(EditOffer);
+  })(EditAssignment);
