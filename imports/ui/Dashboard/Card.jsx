@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
-import { faPenSquare } from '@fortawesome/fontawesome-free-solid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default class Card extends Component {
+export default class Column extends Component {
   render() {
     return(
       <div>
       <div className="card topCard">
-        <div className="topLeft">
-          <div className = "cardCompany">
-            {this.props.company}
-          </div>
-          <div className = "cardPosition">
-            {this.props.position}
-          </div>
-        </div>
+        top
       </div>
       <div className="card bottomCard">
-        <div className = "edit">
-          <FontAwesomeIcon icon="pen-square"/>
-        </div>
       </div>
       </div>
     );
