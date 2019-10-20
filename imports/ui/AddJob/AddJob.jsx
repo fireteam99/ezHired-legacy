@@ -2,31 +2,31 @@ import React, { Component } from 'react';
 import "./AddJob.css";
 
 export default class AddJob extends Component {
-  constructor(props) {
-     super(props);
-     this.state = {value: ''};
-
-     this.handleChange = this.handleChange.bind(this);
-     this.handleSubmit = this.handleSubmit.bind(this);
-   }
-
-   handleChange(event) {
-     this.setState({value: event.target.value});
-   }
-
-   handleSubmit(event) {
-     alert('A name was submitted: ' + this.state.value);
-     event.preventDefault();
-   }
+  state = {}
   render() {
     return(
       <div className="addJob">
       <h2 className="pageHeader">ADD JOB</h2>
-      <form className = "searchForm" onSubmit={this.handleSubmit}>
-        <input className = "" type="text"  value={this.state.value} onChange={this.handleChange} />
-        <button type="submit" id="completed-task" className="">
-            SUBMIT
-      </button>
+      <form>
+
+      <p>Company</p>
+      <input className = "addForm"
+        type='text'
+        name='company'
+        placeHolder='Company'
+        onChange={(e) => this.setState({term: e.target.value})}
+      />
+      <p>Position</p>
+      <input className = "addForm"
+        type='text'
+        name='position'
+        placeHolder = 'Position'
+        onChange={(e) => this.setState({term: e.target.value})}
+      />
+      <br/>
+      <button type="submit" id="completed-task" className="addSubmit">
+          Submit
+          </button>
       </form>
       </div>
 

@@ -7,11 +7,6 @@ import './app.css';
 export default class Header extends Component {
   state = {term: ''};
 
- handleSubmit(event) {
-   alert('A name was submitted: ' + this.state.term);
-   event.preventDefault();
- }
-
   render() {
     return(
       <div className = "header">
