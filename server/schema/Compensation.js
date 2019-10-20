@@ -4,8 +4,8 @@ const Compensation = new SimpleSchema({
   interval: {
     type: String,
     allowedValues: ['hourly', 'salary'],
-    amount: Number
-  }
+  },
+  amount: Number
 });
 
 export default Compensation;

@@ -1,7 +1,6 @@
 import SimpleSchema from 'simpl-schema';
-import Interview from './InterviewSchema';
-import Assignment from './AssignmentSchema';
-import Interview from './Interview';
+import AssignmentSchema from './Assignment';
+import InterviewSchema from './Interview';
 
 const Applied = new SimpleSchema({
   interviews: [InterviewSchema],
