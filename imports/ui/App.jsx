@@ -5,7 +5,7 @@ import AddJob from './AddJob/AddJob.jsx';
 import TaskList from './TaskList/TaskList.jsx';
 import Home from './Home/HomeComponent.jsx'
 
-import { Router, Route, Switch } from 'react-router';
+import { Router, Route, Switch, Redirect } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 const browserHistory = createBrowserHistory();
@@ -14,11 +14,12 @@ const App = () => (
   <Router history={browserHistory}>
     <Header/>
     <Switch>
+      <Route path="/home" component={Home}/>
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/taskList" component={TaskList} />
       <Route exact path="/addJob" component={AddJob} />
+      <Redirect to="home" />
     </Switch>
-    <Home />
   </Router>
 );
 
