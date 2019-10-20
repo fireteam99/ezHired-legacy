@@ -1,35 +1,80 @@
 import React, { Component } from 'react';
+import SimpleSchema from 'simpl-schema';
 import "./AddJob.css";
+import { withTracker } from 'meteor/react-meteor-data';
 
-export default class AddJob extends Component {
-  state = {}
+import { Jobs } from '../../api/jobs.js';
+
+class AddJob extends Component {
+  state = {
+    company: "",
+    position: "",
+    status: "application"
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const job = {
+      user: 'feces',
+      company: {
+        name: this.state.company
+      },
+      position: this.state.position,
+      status: this.state.status,
+      application: null,
+      applied: null,
+      offer: null,
+      rejection: null,
+    };
+    console.log(job)
+    Jobs.insert(job);
+    return false;
+  }
+
   render() {
+    if (this.props.loading) {
+      return(<div>loading</div>);
+    }
     return(
       <div className="addJob">
       <h2 className="pageHeader">ADD JOB</h2>
       <form>
-
-      <p>Company</p>
-      <input className = "addForm"
-        type='text'
-        name='company'
-        placeHolder='Company'
-        onChange={(e) => this.setState({term: e.target.value})}
-      />
-      <p>Position</p>
-      <input className = "addForm"
-        type='text'
-        name='position'
-        placeHolder = 'Position'
-        onChange={(e) => this.setState({term: e.target.value})}
-      />
-      <br/>
-      <button type="submit" id="completed-task" className="addSubmit">
-          Submit
-          </button>
+        <p className = "label">Company</p>
+        <input className = "addForm"
+          type='text'
+          name='company'
+          placeHolder='Company'
+          required
+          onChange={(e) => this.setState({company: e.target.value})}
+        />
+        <p className = "label">Position</p>
+        <input className = "addForm"
+          type='text'
+          name='position'
+          placeHolder = 'Position'
+          required
+          onChange={(e) => this.setState({position: e.target.value})}
+        />
+        <br/>
+        <p className = "label">Status</p>
+        <select className = "addForm" value={this.state.status} onChange={(e) => this.setState({status: e.target.value})}>
+              <option value="application">Not Applied</option>
+              <option value="applied">Applied</option>
+              <option value="finalized">Finalized</option>
+        </select>
+        <br/>
+        <button type="submit" id="completed-task" className="addSubmit" onClick = {() => this.handleSubmit}>
+            Next
+        </button>
       </form>
       </div>
 
     );
   }
 }
+
+export default withTracker(() => {
+  return {
+    jobs: Jobs.find({}).fetch(),
+  };
+})(AddJob);

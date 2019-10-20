@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import Jobs from '/imports/api/jobs';
-import SimpleSchema from 'simpl-schema';
+import { Jobs } from '/imports/api/jobs';
 import jobSchema from './schema/Job';
 import job1 from './testData/job1';
 

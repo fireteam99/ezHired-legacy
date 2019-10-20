@@ -30,4 +30,3 @@ class Dashboard extends Component {
 export default Dashboard;
 //<this.RenderJobCard item = {this.state.jobs[0]} />
 //<Button onClick={this.toggleModal(item)}>see more</Button>
-
